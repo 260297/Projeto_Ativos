@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div class="container mt-5">
+    <h1>Adicionar Ativo</h1>
+    <form method="POST" action="{% url 'adicionar-ativo' %}">
+      {% csrf_token %}
+
+      <div class="mb-3">
+        <label for="imob" class="form-label">Número do Imobilizado</label>
+        <input type="text" class="form-control" id="imob" name="imob" required>
+      </div>
+      <div class="mb-3">
+        <label for="local" class="form-label">Local</label>
+        <input type="text" class="form-control" id="local" name="local" required>
+      </div>
+      <div class="mb-3">
+        <label for="setor" class="form-label">Setor</label>
+        <input type="text" class="form-control" id="setor" name="setor" required>
+      </div>
+      <div class="mb-3">
+        <label for="responsavel" class="form-label">Responsável</label>
+        <input type="text" class="form-control" id="responsavel" name="responsavel" required>
+      </div>
+      <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo</label>
+        <input type="text" class="form-control" id="tipo" name="tipo" required>
+      </div>
+      <div class="mb-3">
+        <label for="modelo" class="form-label">Modelo</label>
+        <input type="text" class="form-control" id="modelo" name="modelo" required>
+      </div>
+      <div class="mb-3">
+        <label for="win" class="form-label">Win</label>
+        <input type="text" class="form-control" id="win" name="win" required>
+      </div>
+      <div class="mb-3">
+        <label for="chave_win" class="form-label">Chave_win</label>
+        <input type="text" class="form-control" id="chave_win" name="chave_win" required>
+      </div>
+      <div class="mb-3">
+        <label for="mac" class="form-label">MAC</label>
+        <input type="text" class="form-control" id="mac" name="mac" required>
+      </div>
+      <div class="mb-3">
+        <label for="mac_wifi" class="form-label">MAC_wifi</label>
+        <input type="text" class="form-control" id="mac_wifi" name="mac_wifi" required>
+      </div>
+      <div class="mb-3">
+        <label for="office" class="form-label">Office</label>
+        <input type="text" class="form-control" id="office" name="office" required>
+      </div>
+      <div class="mb-3">
+        <label for="chave_office" class="form-label">Chave_office</label>
+        <input type="text" class="form-control" id="chave_office" name="chave_office" required>
+        <div class="mb-3">
+          <label for="obs" class="form-label">Obs</label>
+          <input type="text" class="form-control" id="obs" name="obs" required>
+        </div>
+      </div>
+    
+      <!-- Adicione outros campos do formulário aqui -->
+      <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>
+  </div>
+  {% endblock %}
+ 

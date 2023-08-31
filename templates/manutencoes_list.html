@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lista de Manutenções</h1>
+    <ul>
+        {% for manutencao in manutencoes %}
+            <li>
+                <strong>Ativo_ID:</strong> {{ manutencao.ativo }}<br>
+                <strong>Imobilizado:</strong> {{ manutencao.imob }}<br>
+                <strong>Data de Manutenção:</strong> {{ manutencao.data_manutencao }}<br>
+                <strong>Descrição:</strong> {{ manutencao.descricao|default:"N/A" }}<br>
+                <strong>Técnico Responsável:</strong> {{ manutencao.tecnico_responsavel }}
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+{% endblock %}

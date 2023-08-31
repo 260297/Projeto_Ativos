@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container mt-5">
+    <h1>Excluir Ativo</h1>
+    <p>Você tem certeza que deseja excluir o ativo "{{ ativo.id }}"?</p>
+    <form method="POST" action="{% url 'excluir-ativo' ativo.id %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Excluir</button>
+      <a href="{% url 'lista-ativos' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+  
+  <div class="container mt-5">
+    <h1>Editar Ativo</h1>
+    <form method="POST" action="{% url 'editar-ativo' ativo.id %}">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="imob" class="form-label">Número do Imobilizado</label>
+        <input type="text" class="form-control" id="imob" name="imob" value="{{ ativo.imob }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="local" class="form-label">Local</label>
+        <input type="text" class="form-control" id="local" name="local" value="{{ ativo.local }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="setor" class="form-label">Setor</label>
+        <input type="text" class="form-control" id="setor" name="setor" value="{{ ativo.setor }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="responsavel" class="form-label">Responsável</label>
+        <input type="text" class="form-control" id="responsavel" name="responsavel" value="{{ ativo.responsavel }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo</label>
+        <input type="text" class="form-control" id="tipo" name="tipo" value="{{ ativo.tipo }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="modelo" class="form-label">Modelo</label>
+        <input type="text" class="form-control" id="modelo" name="modelo" value="{{ ativo.modelo }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="win" class="form-label">Win</label>
+        <input type="text" class="form-control" id="win" name="win" value="{{ ativo.win }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="chave_win" class="form-label">Chave_win</label>
+        <input type="text" class="form-control" id="chave_win" name="chave_win" value="{{ ativo.chave_win}}" required>
+      </div>
+      <div class="mb-3">
+        <label for="mac" class="form-label">MAC</label>
+        <input type="text" class="form-control" id="mac" name="mac" value="{{ ativo.mac }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="mac_wifi" class="form-label">Mac_wifi</label>
+        <input type="text" class="form-control" id="mac_wifi" name="mac_wifi" value="{{ ativo.mac_wifi }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="office" class="form-label">Office</label>
+        <input type="text" class="form-control" id="office" name="office"value="{{ ativo.office }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="chave_office" class="form-label">Chave_office/label>
+        <input type="text" class="form-control" id="chave_office" name="chave_office" value="{{ ativo.chave_office }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="obs" class="form-label">Obs</label>
+        <input type="text" class="form-control" id="obs" name="obs" value="{{ ativo.obs }}" required>
+      </div>
+      <!-- Adicione outros campos do formulário aqui -->
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1>Resultado da Pesquisa por '{{ pesquisa }}'</h1>
+  <ul>
+    {% if ativo %}
+      <li><strong>Imob:</strong> {{ ativo.imob }}</li>
+      <li><strong>Local:</strong> {{ ativo.local }}</li>
+      <li><strong>Setor:</strong> {{ ativo.setor }}</li>
+      <li><strong>Responsável:</strong> {{ ativo.responsavel }}</li>
+      <li><strong>Tipo:</strong> {{ ativo.tipo }}</li>
+      <li><strong>Modelo:</strong> {{ ativo.modelo }}</li>
+      <li><strong>Windows:</strong> {{ ativo.win }}</li>
+      <li><strong>Chave Windows:</strong> {{ ativo.chave_win }}</li>
+      <li><strong>MAC:</strong> {{ ativo.mac }}</li>
+      <li><strong>MAC Wi-Fi:</strong> {{ ativo.mac_wifi }}</li>
+      <li><strong>Office:</strong> {{ ativo.office }}</li>
+      <li><strong>Chave Office:</strong> {{ ativo.chave_office }}</li>
+      <li><strong>Observações:</strong> {{ ativo.obs }}</li>
+    {% else %}
+      <li>Nenhum ativo encontrado.</li>
+    {% endif %}
+  </ul>
+</div>
+{% endblock %}

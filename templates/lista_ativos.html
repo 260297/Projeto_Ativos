@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+    <form class="d-flex" method="GET" action="{% url 'pesquisar' %}">
+      <input class="form-control me-2" type="search" placeholder="Pesquisar por Imobilizado" name="imob" aria-label="Search">
+      <button class="btn btn-dark" type="submit">Pesquisar</button>
+    </form>
+
+  <div class="table-responsive">
+    <h1>Lista de Ativos</h1>
+    <table class="table-responsive">
+      <thead class="text-dark">
+        <tr>
+          <th>ID</th>
+          <th>Imobilizado</th>
+          <th>Local</th>
+          <th>Setor</th>
+          <th>Responsável</th>
+          <th>Tipo</th>
+          <th>Modelo</th>
+          <th>Win</th>
+          <th>Chave_win</th>
+          <th>MAC</th>
+          <th>MAC_wifi</th>
+          <th>office</th>
+          <th>Chave_office</th>
+          <th>Obs</th>
+          <th>Ações</th> <!-- Coluna para os botões de editar e excluir -->
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for ativo in ativos %}
+        <tr>
+          <td>{{ ativo.id }}</td>
+          <td>{{ ativo.imob }}</td>
+          <td>{{ ativo.local }}</td>
+          <td>{{ ativo.setor }}</td>
+          <td>{{ ativo.responsavel }}</td>
+          <td>{{ ativo.tipo }}</td>
+          <td>{{ ativo.modelo }}</td>
+          <td>{{ ativo.win }}</td>
+          <td>{{ ativo.chave_win }}</td>
+          <td>{{ ativo.mac }}</td>
+          <td>{{ ativo.mac_wifi }}</td>
+          <td>{{ ativo.office }}</td>
+          <td>{{ ativo.chave_office }}</td>
+          <td>{{ ativo.obs }}</td>
+          <td>
+            <a href="{% url 'editar-ativo' ativo.id %}" class="btn-sm btn-primary editar-ativo" data-ativo-id="{{ ativo.id }}">
+              <i class="fas fa-edit" ></i>
+            </a> <!-- Botão de editar -->
+            <a href="{% url 'excluir-ativo' ativo.id %}" class="btn-sm btn-danger">
+              <i class="fas fa-trash" ></i>
+            </a> <!-- Botão de excluir -->
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="15">Nenhum ativo encontrado.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+{% endblock %}

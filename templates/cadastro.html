@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% if form.errors %}
+    <p>Erro(s) foram encontrados no formulário. Por favor, corrija-os e tente novamente.</p>
+  {% endif %}
+
+  <h2>Cadastro</h2>
+  <p>Preencha o formulário abaixo para criar uma nova conta.</p>
+
+  <form method="post" action="{% url '' %}">
+    {% csrf_token %}
+    <table class="form-group">
+      <tr>
+        <td>{{ form.username.label_tag }}</td>
+        <td>{{ form.username }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.email.label_tag }}</td>
+        <td>{{ form.email }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.password1.label_tag }}</td>
+        <td>{{ form.password1 }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.password2.label_tag }}</td>
+        <td>{{ form.password2 }}</td>
+      </tr>
+    </table>
+    <input type="submit" value="Cadastrar" />
+  </form>
+
+{% endblock %}

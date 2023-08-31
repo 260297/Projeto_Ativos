@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container mt-5">
+      <h1>Adicionar Manutenção</h1>
+      <form method="POST" action="{% url 'adicionar-manutencao' %}">
+          {% csrf_token %}
+          
+          <div class="mb-3">
+            <label for="ativo" class="form-label">Ativo</label>
+            <input type="text" class="form-control" id="ativo" name="ativo" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="imob" class="form-label">Número do Imobilizado</label>
+            <input type="text" class="form-control" id="imob" name="imob" required>
+        </div>
+
+          <div class="mb-3">
+              <label for="data_manutencao" class="form-label">Data de Manutenção</label>
+              <input type="text" class="form-control" id="data_manutencao" name="data_manutencao" required>
+          </div>
+
+          <div class="mb-3">
+              <label for="descricao" class="form-label">Descrição</label>
+              <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+              <label for="tecnico_responsavel" class="form-label">Técnico Responsável</label>
+              <input type="text" class="form-control" id="tecnico_responsavel" name="tecnico_responsavel" required>
+          </div>
+
+          <!-- Adicione outros campos do formulário aqui -->
+          <button type="submit" class="btn btn-success">Cadastrar</button>
+      </form>
+  </div>
+  {% endblock %}

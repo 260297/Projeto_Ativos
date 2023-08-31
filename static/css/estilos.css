@@ -1,0 +1,105 @@
+.form-search {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para a tabela */
+  .table-responsive {
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: nowrap; /* Impede a quebra de texto nas células */
+
+  }
+  
+  /* Estilo para as células da tabela */
+  table td, table th {
+    padding: 8px;
+    border: 0.5px solid rgb(0, 0, 0);
+  }
+  
+
+  
+  /* Estilo para os botões de ação */
+  .btn-action {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 2px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    
+    
+  }
+  
+
+  
+
+.fas {
+    font-size: 20px;   
+    transition: color 0.3s; /* Adiciona uma transição suave à mudança de cor */
+    color: #000d00; 
+    
+}
+
+/* Efeito de hover nos ícones */
+.fas:hover {
+    color: #eeebeb; /* Cor que deseja quando o cursor está sobre o ícone */
+}
+
+
+.btn-sm{
+  text-decoration: none;
+}
+
+.rounded-circle{
+  margin-right: 20px;
+}
+
+
+.centered-title {
+  text-align: center;
+  margin: 0%;
+}
+
+
+.welcome-image {
+  max-width: 60%;
+  height: auto;
+  margin-top: 10px;
+}
+
+
+
+/* Estilo para o footer */
+.footer {
+  background-color: #50505041;
+  color: rgb(255, 255, 255);
+  padding: 5px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 100; /* Certifique-se de que o footer esteja acima de outros elementos */
+}
+
+.footer p {
+  margin-bottom: 5px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  display: inline;
+  margin-right: 10px;
+}
