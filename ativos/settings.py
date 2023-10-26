@@ -1,5 +1,7 @@
 from pathlib import Path
 import os
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -66,23 +68,23 @@ WSGI_APPLICATION = 'ativos.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-# DATABASES = { 
-#     'default': { 
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-#         'NAME': 'ativos', 
-#         'USER': 'postgres', 
-#         'PASSWORD': '', 
-#         'HOST': '127.0.0.1', 
-#         'PORTA': '5432', 
-#     } 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
 # }
+
+DATABASES = { 
+    'default': { 
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': 'Ativos', 
+        'USER': 'postgres', 
+        'PASSWORD': config('PASSWORD_DB'), 
+        'HOST': 'localhost', 
+        'PORTA': '5432', 
+    } 
+}
 
 
 
